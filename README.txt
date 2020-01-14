@@ -1,39 +1,51 @@
 Finance_Tracer
 By: Dominic Adam
 
-to do:
+To-do:
 ----------ADD----------
-
--Calculate specific totals
+1-Date input
+    -Day
+    -Month
+    -Year
+2-Calculate specific totals
     -Date
         -Day
         -Month
         -Year
     -Place
     -Date & Place
--Categories
+3-Categories
     -Premade
         -Savings
         -Food 
         -Bills
-        -House
-            -Gas
-            -Water
-            -Electricity
-        -Car
-        -School
-        -Other
+            -House
+                -Gas
+                -Water
+                -Electricity
+            -Car
+            -School
+            -Other
         -Leisure
         -Other
     -Custom
--Spendings report
+4-Spendings report
     -Monthly
     -Weekly
-
-
-Estimated savings
-Savings
+    -Yearly
+5-Estimate savings
+6-Savings
 
 ----------Modify----------
 
--Simplfy input
+1-Simplify input
+    -Shorten input terms
+        -Use numbers
+        -Allow misspelling
+2-Clean up code
+    -Make more organized
+    -Optimize
+    -Check and rename variables
+        -If necessary
+3-Debug
+    -Clear file before saving
