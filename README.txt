@@ -1,5 +1,6 @@
 Finance_Tracer
 By: Dominic Adam
+A text based finance application for tracking spendings and making reports on spending and saving habits.
 
 To-do:
 ----------ADD----------
