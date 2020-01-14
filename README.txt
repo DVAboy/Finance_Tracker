@@ -36,6 +36,14 @@ To-do:
     -Yearly
 5-Estimate savings
 6-Savings
+    -Estimate
+    -Annual income
+7-Budget
+    -Progress
+        -Weekly
+        -Monthly
+    -Grade
+    -Categories
 
 ----------Modify----------
 
