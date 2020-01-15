@@ -5,17 +5,19 @@ A text based finance application for tracking spendings and making reports on sp
 To-do:
 ----------ADD----------
 1-Date input
+    -Java global clock
     -Day
     -Month
     -Year
-2-Calculate specific totals
+2-Constructors
+3-Calculate specific totals
     -Date
         -Day
         -Month
         -Year
     -Place
     -Date & Place
-3-Categories
+4-Categories
     -Premade
         -Savings
         -Food 
@@ -30,11 +32,10 @@ To-do:
         -Leisure
         -Other
     -Custom
-4-Spendings report
+5-Spendings report
     -Monthly
     -Weekly
     -Yearly
-5-Estimate savings
 6-Savings
     -Estimate
     -Annual income
@@ -53,6 +54,7 @@ To-do:
         -Allow misspelling
 2-Clean up code
     -Make more organized
+    -comment code
     -Optimize
     -Check and rename variables
         -If necessary

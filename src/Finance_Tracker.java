@@ -9,6 +9,7 @@ public class Finance_Tracker {
         data.addAmount();
         data.addWhere();
         data.addWhat();
+        data.addDate();
         System.out.println("The transaction has been added to the records");
     }
 

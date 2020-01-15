@@ -1,15 +1,17 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.time.*;
 
 //Background functions for Finance Tracker
 public class Data {
+    private Clock clock = ();
     private ArrayList<Double> amounts = new ArrayList<>();
     private ArrayList<String> locations = new ArrayList<>();
     private ArrayList<String> items = new ArrayList<>();
     private ArrayList<String> dates = new ArrayList<>();
 
-    ///////////////////////////////Add Functions/////////////////////////////////////
+    ////////////////////Add Functions////////////////////
     public void addAmount() {
         System.out.print("enter the amount spent.");
         Scanner input = new Scanner(System.in);
@@ -27,8 +29,16 @@ public class Data {
         Scanner input = new Scanner(System.in);
         items.add(input.nextLine());
     }
+    
+    public void addDate() {
+        System.out.print("Enter the date");
+        Scanner input = new Scanner(System.in);
+        dates.add(input.nextLine());
+    }
+    
+    private 
 
-    ///////////////////////////////Get Functions///////////////////////////////
+    ////////////////////Get Functions////////////////////
     public void getAmountList(int transaction) {
         Double amount = amounts.get(transaction);
         System.out.print("$" + amount + ", ");
@@ -44,7 +54,7 @@ public class Data {
         System.out.println(what + ", ");
     }
 
-    ///////////////////////////////Calculator///////////////////////////////
+    ////////////////////Calculator////////////////////
     public void calcTotal() {
         Double total = 0.0;
         for (int x = 0; x < amounts.size(); x++) {
@@ -54,7 +64,7 @@ public class Data {
         System.out.println(" ");
     }
 
-    ///////////////////////////////File Reader///////////////////////////////
+    ////////////////////File Reader////////////////////
     public void readFile() {
         String fileName = "StoredData.txt";
         String line = null;
@@ -94,7 +104,7 @@ public class Data {
         }
     }
 
-    ///////////////////////////////File Writer///////////////////////////////
+    ////////////////////File Writer////////////////////
     public void writeFile() {
         String fileName = "StoredData.txt";
 
