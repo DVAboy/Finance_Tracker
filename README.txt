@@ -5,10 +5,12 @@ A text based finance application for tracking spendings and making reports on sp
 To-do:
 ----------ADD----------
 1-Date input
-    -Java global clock
-    -Day
-    -Month
-    -Year
+    -2d array
+        -Month
+        -Day
+        -Year
+    -Calendar class
+        -Gregorian calendar
 2-Constructors
 3-Calculate specific totals
     -Date
@@ -54,6 +56,7 @@ To-do:
         -Allow misspelling
 2-Clean up code
     -Make more organized
+        -more separate classes
     -comment code
     -Optimize
     -Check and rename variables

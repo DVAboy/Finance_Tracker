@@ -1,15 +1,15 @@
-import java.io.*;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
-import java.time.*;
 
 //Background functions for Finance Tracker
 public class Data {
-    private Clock clock = ();
+    private Calendar calendar = new GregorianCalendar();
     private ArrayList<Double> amounts = new ArrayList<>();
     private ArrayList<String> locations = new ArrayList<>();
     private ArrayList<String> items = new ArrayList<>();
-    private ArrayList<String> dates = new ArrayList<>();
+    private ArrayList<Integer> dates = new ArrayList<>();
 
     ////////////////////Add Functions////////////////////
     public void addAmount() {
@@ -29,99 +29,57 @@ public class Data {
         Scanner input = new Scanner(System.in);
         items.add(input.nextLine());
     }
-    
+
     public void addDate() {
-        System.out.print("Enter the date");
-        Scanner input = new Scanner(System.in);
-        dates.add(input.nextLine());
+        dates.add(calendar.get(Calendar.MONTH));
+        dates.add(calendar.get(Calendar.DATE));
+        dates.add(calendar.get(Calendar.YEAR));
     }
-    
-    private 
 
     ////////////////////Get Functions////////////////////
+    //amounts
     public void getAmountList(int transaction) {
-        Double amount = amounts.get(transaction);
-        System.out.print("$" + amount + ", ");
+        System.out.print("$" + amounts.get(transaction) + ", ");
     }
 
+    public ArrayList<Double> getAmountList() {
+        return amounts;
+    }
+
+    //locations
     public void getWhereList(int transaction) {
-        String where = locations.get(transaction);
-        System.out.print(where + ", ");
+        System.out.print(locations.get(transaction) + ", ");
     }
 
+    public ArrayList<String> getWhereList() {
+        return locations;
+    }
+
+    //items
     public void getWhatList(int transaction) {
-        String what = items.get(transaction);
-        System.out.println(what + ", ");
+        System.out.println(items.get(transaction) + ", ");
+    }
+
+    public ArrayList<String> getWhatList() {
+        return items;
+    }
+
+    //dates
+    public void getWhenList(int transaction) {
+        System.out.println(dates.get(transaction));
+    }
+
+    public ArrayList<Integer> getWhenList() {
+        return dates;
     }
 
     ////////////////////Calculator////////////////////
     public void calcTotal() {
         Double total = 0.0;
-        for (int x = 0; x < amounts.size(); x++) {
-            total += amounts.get(x);
+        for (Double amount : amounts) {
+            total += amount;
         }
         System.out.printf("Your total amount spent was $%4.2f", total);
         System.out.println(" ");
-    }
-
-    ////////////////////File Reader////////////////////
-    public void readFile() {
-        String fileName = "StoredData.txt";
-        String line = null;
-        int l = 1;
-        String[] vars;
-        String temp;
-        try {
-            FileReader fileReader = new FileReader(fileName);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-            while ((line = bufferedReader.readLine()) != null) {
-                temp = line.substring(1, line.length() - 1);
-                vars = temp.split(", ");
-                switch (l++) {
-                    case 1:
-                        for (int o = 0; o < vars.length; o++) {
-                            amounts.add(Double.parseDouble(vars[o]));
-                        }
-                        break;
-                    case 2:
-                        for (int o = 0; o < vars.length; o++) {
-                            locations.add(vars[o]);
-                        }
-                        break;
-                    case 3:
-                        for (int o = 0; o < vars.length; o++) {
-                            items.add(vars[o]);
-                        }
-                        break;
-                }
-            }
-            bufferedReader.close();
-        } catch (FileNotFoundException ex) {
-            System.out.println("Unable to open file '" + fileName + "'");
-        } catch (IOException ex) {
-            System.out.println("Error reading file '" + fileName + "'");
-        }
-    }
-
-    ////////////////////File Writer////////////////////
-    public void writeFile() {
-        String fileName = "StoredData.txt";
-
-        try {
-            FileWriter fileWriter = new FileWriter(fileName);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            fileWriter.flush();
-
-            bufferedWriter.write(String.valueOf(amounts));
-            bufferedWriter.newLine();
-            bufferedWriter.write(String.valueOf(locations));
-            bufferedWriter.newLine();
-            bufferedWriter.write(String.valueOf(items));
-
-            bufferedWriter.close();
-        } catch (IOException ex) {
-            System.out.println("Error writing to file '" + fileName + "'");
-        }
     }
 }
