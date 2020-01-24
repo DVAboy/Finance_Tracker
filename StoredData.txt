@@ -1,3 +1,4 @@
-[4.2, 0.69, 7.68, 6.99, 7.2]
-[Walmart, Cosco, McDonalds, Taco Bell, Subway]
-[Spoons, eggs, Big Mac, Taco, Sub]
+[7.68]
+[walmart]
+[chocolate]
+[0, 21, 2020]

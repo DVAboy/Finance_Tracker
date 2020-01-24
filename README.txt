@@ -20,7 +20,7 @@ To-do:
     -Place
     -Date & Place
 4-Categories
-    -Premade
+    -Built in
         -Savings
         -Food 
         -Bills
@@ -62,4 +62,4 @@ To-do:
     -Check and rename variables
         -If necessary
 3-Debug
-    -Clear file before saving
+    -Save previous transactions

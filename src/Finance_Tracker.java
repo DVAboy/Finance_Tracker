@@ -9,24 +9,43 @@ public class Finance_Tracker {
     public void userInterface() {
         Scanner input = new Scanner(System.in);
         String response = "default";
-        while (!"save".equals(response.toLowerCase())) {
+        while (!"close".equals(response.toLowerCase())) {
             file.readFile();
-            System.out.println("What would you like to do? (Add Transaction, Previous Transaction, Get Total, Save)");
+            System.out.println("What would you like to do? (Add Transaction, Previous Transaction, Get Total, Close)");
             response = input.nextLine();
-            if (response.toLowerCase().equals("add transaction")) {
-                addTransaction();
-            } else if (response.toLowerCase().equals("previous transaction")) {
-                getTransaction();
-            } else if (response.toLowerCase().equals("save")) {
-                //this prevents from asking what to do again
-            } else if (response.toLowerCase().equals("get total")) {
-                getTotal();
-            } else {
-                System.out.println("Please enter one of the specified responses.");
+            switch (response.toLowerCase()) {
+                case "add transaction":
+                    addTransaction();
+                    break;
+                case "add":
+                    addTransaction();
+                    break;
+                case "previous transaction":
+                    getTransaction();
+                    break;
+                case "previous":
+                    getTransaction();
+                    break;
+                case "close":
+                    break;  //this prevents from asking what to do again
+                case "get total":
+                    getTotal();
+                    break;
+                case "total":
+                    getTotal();
+                    break;
+                default:
+                    System.out.println("Please enter one of the specified responses.");
+                    break;
             }
         }
         System.out.println("Thank you for using finance Tracker.");
         file.writeFile(data.getAmountList(), data.getWhereList(), data.getWhatList(), data.getWhenList());
+    }
+
+    ///////////////////////////////FileHandler return///////////////////////////////
+    private void receiveHistory() {
+
     }
 
     ///////////////////////////////Transaction Adder///////////////////////////////

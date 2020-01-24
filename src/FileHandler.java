@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class FileHandler {
     private ArrayList<Double> amounts = new ArrayList<>();
@@ -12,10 +13,10 @@ public class FileHandler {
     ////////////////////File Reader////////////////////
     public void readFile() {
         String fileName = "StoredData.txt";
-        String line = null;
-        int l = 1;
+        String line, temp;
         String[] vars;
-        String temp;
+        int l = 1;
+
         try {
             FileReader fileReader = new FileReader(fileName);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -30,14 +31,10 @@ public class FileHandler {
                         }
                         break;
                     case 2:
-                        for (String var : vars) {
-                            locations.add(var);
-                        }
+                        locations.addAll(Arrays.asList(vars));
                         break;
                     case 3:
-                        for (String var : vars) {
-                            items.add(var);
-                        }
+                        items.addAll(Arrays.asList(vars));
                         break;
                     case 4:
                         for (String var : vars) {
