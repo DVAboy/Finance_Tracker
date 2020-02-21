@@ -11,7 +11,7 @@ public class Finance_Tracker {
         String response = "default";
         while (!"close".equals(response.toLowerCase())) {
             file.readFile();
-            System.out.println("What would you like to do? (Add Transaction, Previous Transaction, Get Total, Close)");
+            System.out.println("What would you like to do? (1 - Add Transaction, 2 - Previous Transaction, 3 - Get Total, 4 - Close)");
             response = input.nextLine();
             switch (response.toLowerCase()) {
                 case "add transaction":
@@ -20,22 +20,37 @@ public class Finance_Tracker {
                 case "add":
                     addTransaction();
                     break;
+                case "1":
+                    addTransaction();
+                    break;
+
                 case "previous transaction":
                     getTransaction();
                     break;
                 case "previous":
                     getTransaction();
                     break;
-                case "close":
-                    break;  //this prevents from asking what to do again
+                case "2":
+                    getTransaction();
+                    break;
+
                 case "get total":
                     getTotal();
                     break;
                 case "total":
                     getTotal();
                     break;
+                case "3":
+                    getTotal();
+                    break;
+
+                case "close":
+                    break;  //this prevents from asking what to do again
+                case "4":
+                    break;  //this prevents from asking what to do again
+
                 default:
-                    System.out.println("Please enter one of the specified responses.");
+                    System.out.println("Please enter one of the specified responses, examples: Add Transaction, Add, 1");
                     break;
             }
         }
@@ -59,12 +74,17 @@ public class Finance_Tracker {
 
     ///////////////////////////////Gets Previous Transaction///////////////////////////////
     public void getTransaction() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("which transaction would you like to see?");
-        int transaction = input.nextInt();
-        data.getAmountList(transaction);
-        data.getWhereList(transaction);
-        data.getWhatList(transaction);
+        int transaction = 0;
+        try {
+            Scanner input = new Scanner(System.in);
+            System.out.println("which transaction would you like to see?");
+            transaction = input.nextInt();
+            data.getAmountList(transaction);
+            data.getWhereList(transaction);
+            data.getWhatList(transaction);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("There is no transaction in position " + transaction + ".");
+        }
     }
 
     ///////////////////////////////Total Calculator///////////////////////////////
