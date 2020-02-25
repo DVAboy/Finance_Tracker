@@ -7,12 +7,12 @@ public class FileHandler {
     private ArrayList<String> locations = new ArrayList<>();
     private ArrayList<String> items = new ArrayList<>();
     private ArrayList<Integer> dates = new ArrayList<>();
+    private String fileName;
 
     ////////////////////Constructors////////////////////
 
     ////////////////////File Reader////////////////////
     public void readFile() {
-        String fileName = "StoredData.txt";
         String line, temp;
         String[] vars;
         int l = 1;
@@ -53,7 +53,6 @@ public class FileHandler {
 
     ////////////////////File Writer////////////////////
     public void writeFile(ArrayList<Double> amounts, ArrayList<String> locations, ArrayList<String> items, ArrayList<Integer> dates) {
-        String fileName = "StoredData.txt";
 
         try {
             FileWriter fileWriter = new FileWriter(fileName);
@@ -91,5 +90,11 @@ public class FileHandler {
 
     public ArrayList<Integer> getDates() {
         return dates;
+    }
+
+    ////////////////////Constructors/////////////////////
+    public FileHandler(String fileName) {
+        this.fileName = fileName;
+        readFile();
     }
 }

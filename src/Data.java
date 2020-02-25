@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 //Background functions for Finance Tracker
 public class Data {
+    private FileHandler file = new FileHandler("StoredData.txt");
     private Calendar calendar = new GregorianCalendar();
-    private ArrayList<Double> amounts = new ArrayList<>();
-    private ArrayList<String> locations = new ArrayList<>();
-    private ArrayList<String> items = new ArrayList<>();
-    private ArrayList<Integer> dates = new ArrayList<>();
+    private ArrayList<Double> amounts;
+    private ArrayList<String> locations;
+    private ArrayList<String> items;
+    private ArrayList<Integer> dates;
 
     ////////////////////Add Functions////////////////////
     public void addAmount() {
@@ -38,8 +39,8 @@ public class Data {
 
     ////////////////////Get Functions////////////////////
     //amounts
-    public void getAmountList(int transaction) {
-        System.out.print("$" + amounts.get(transaction) + ", ");
+    public Double getAmount(int transaction) {
+        return amounts.get(transaction);
     }
 
     public ArrayList<Double> getAmountList() {
@@ -47,8 +48,8 @@ public class Data {
     }
 
     //locations
-    public void getWhereList(int transaction) {
-        System.out.print(locations.get(transaction) + ", ");
+    public String getWhere(int transaction) {
+        return locations.get(transaction);
     }
 
     public ArrayList<String> getWhereList() {
@@ -56,8 +57,8 @@ public class Data {
     }
 
     //items
-    public void getWhatList(int transaction) {
-        System.out.println(items.get(transaction) + ", ");
+    public String getWhat(int transaction) {
+        return items.get(transaction);
     }
 
     public ArrayList<String> getWhatList() {
@@ -65,8 +66,8 @@ public class Data {
     }
 
     //dates
-    public void getWhenList(int transaction) {
-        System.out.println(dates.get(transaction));
+    public Integer getWhen(int transaction) {
+        return dates.get(transaction);
     }
 
     public ArrayList<Integer> getWhenList() {
@@ -81,5 +82,18 @@ public class Data {
         }
         System.out.printf("Your total amount spent was $%4.2f", total);
         System.out.println(" ");
+    }
+
+    /////////////////////Writer////////////////////
+    public void writeToFile(){
+        file.writeFile(getAmountList(), getWhereList(), getWhatList(), getWhenList());
+    }
+
+    ////////////////////Constructors////////////////////
+    public Data () {
+        this.amounts = file.getAmounts();
+        this.locations = file.getLocations();
+        this.items = file.getItems();
+        this.dates = file.getDates();
     }
 }
