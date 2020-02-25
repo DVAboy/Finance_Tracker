@@ -43,11 +43,7 @@ To-do:
 
 ----------Modify----------
 1-Clean up code
-    -Make more organized
     -comment code
-    -Optimize
-    -Check and rename variables
-        -If necessary
 
 ----------Done----------
 1-Simplify input - 2/24
@@ -58,14 +54,18 @@ To-do:
 3-Debug - 2/24
        -Save previous transactions
 4-Date input - 2/24
-      -2d array
+      -array
           -Month
           -Day
           -Year
       -Calendar class
           -Gregorian calendar
 5-.Jar file - 2/21
-6-
+6-Cleaned up Code - 2/24
+    -make more organized
+    -Optimize
+    -Check and rename variables
+        -If necessary
 7-
 8-
 9-
