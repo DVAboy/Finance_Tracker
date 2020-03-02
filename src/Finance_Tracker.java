@@ -47,6 +47,7 @@ public class Finance_Tracker {
 
                 //close responses
                 case "close":
+                    response = "close";
                     break;  //this prevents from asking what to do again
                 case "4":
                     response = "close";
@@ -62,7 +63,7 @@ public class Finance_Tracker {
     }
 
     ////////////////////Transaction Adder////////////////////
-    public void addTransaction() {
+    private void addTransaction() {
         data.addAmount();
         data.addWhere();
         data.addWhat();
@@ -71,7 +72,7 @@ public class Finance_Tracker {
     }
 
     ////////////////////Gets Previous Transaction////////////////////
-    public void getTransaction() {
+    private void getTransaction() {
         int transaction = 0;
         try {
             Scanner input = new Scanner(System.in);
@@ -91,7 +92,7 @@ public class Finance_Tracker {
     }
 
     ////////////////////Total Calculator////////////////////
-    public void getTotal() {
+    private void getTotal() {
         data.calcTotal();
     }
 

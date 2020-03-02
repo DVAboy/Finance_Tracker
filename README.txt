@@ -2,6 +2,10 @@ Finance_Tracer
 By: Dominic Adam
 A text based finance application for tracking spendings and making reports on spending and saving habits.
 
+How to Launch .JAR in console:
+1 - open Command Prompt
+2 - type "java -jar H:\TSA_Dominic_Adam\Finance_Tracker.jar"
+
 To-do:
 ----------ADD----------
 1-Categories
@@ -43,6 +47,7 @@ To-do:
 
 ----------Modify----------
 1-Clean up code
+    -optimize
     -comment code
 
 ----------Done----------

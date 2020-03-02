@@ -13,41 +13,16 @@ public class FileHandler {
 
     ////////////////////File Reader////////////////////
     public void readFile() {
-        String line, temp;
-        String[] vars;
-        int l = 1;
+        for (String var : interpret(0)) {
+            amounts.add(Double.parseDouble(var));
+        }
+        
+        locations.addAll(Arrays.asList(interpret(1)));
 
-        try {
-            FileReader fileReader = new FileReader(fileName);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
+        items.addAll(Arrays.asList(interpret(2)));
 
-            while ((line = bufferedReader.readLine()) != null) {
-                temp = line.substring(1, line.length() - 1);
-                vars = temp.split(", ");
-                switch (l++) {
-                    case 1:
-                        for (String var : vars) {
-                            amounts.add(Double.parseDouble(var));
-                        }
-                        break;
-                    case 2:
-                        locations.addAll(Arrays.asList(vars));
-                        break;
-                    case 3:
-                        items.addAll(Arrays.asList(vars));
-                        break;
-                    case 4:
-                        for (String var : vars) {
-                            dates.add(Integer.parseInt(var));
-                        }
-                        break;
-                }
-            }
-            bufferedReader.close();
-        } catch (FileNotFoundException ex) {
-            System.out.println("Unable to open file '" + fileName + "'");
-        } catch (IOException ex) {
-            System.out.println("Error reading file '" + fileName + "'");
+        for (String var : interpret(3)) {
+            dates.add(Integer.parseInt(var));
         }
     }
 
@@ -72,6 +47,32 @@ public class FileHandler {
         } catch (IOException ex) {
             System.out.println("Error writing to file '" + fileName + "'");
         }
+    }
+
+    private String[] interpret(int lineNum) {
+        String line, temp;
+        String[] vars = null;
+
+        try {
+            FileReader fileReader = new FileReader(fileName);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            for (int i = 0; i < lineNum; i++) {
+                bufferedReader.readLine();
+            }
+
+            line = bufferedReader.readLine();
+            temp = line.substring(1, line.length() - 1);
+            vars = temp.split(", ");
+
+            bufferedReader.close();
+        } catch (FileNotFoundException ex) {
+            System.out.println("Unable to open file '" + fileName + "'");
+        } catch (IOException ex) {
+            System.out.println("Error reading file '" + fileName + "'");
+        }
+
+        return vars;
     }
 
     ////////////////////Getters and Setters////////////////////

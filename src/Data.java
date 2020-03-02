@@ -14,19 +14,19 @@ public class Data {
 
     ////////////////////Add Functions////////////////////
     public void addAmount() {
-        System.out.print("enter the amount spent.");
+        System.out.print("Enter the amount spent. ");
         Scanner input = new Scanner(System.in);
         amounts.add(input.nextDouble());
     }
 
     public void addWhere() {
-        System.out.print("enter where the transaction was held.");
+        System.out.print("Enter where the transaction was held. ");
         Scanner input = new Scanner(System.in);
         locations.add(input.nextLine());
     }
 
     public void addWhat() {
-        System.out.print("enter what was purchased");
+        System.out.print("Enter what was purchased ");
         Scanner input = new Scanner(System.in);
         items.add(input.nextLine());
     }
