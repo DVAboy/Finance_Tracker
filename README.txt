@@ -8,7 +8,8 @@ How to Launch .JAR in console:
 
 To-do:
 ----------ADD----------
-1-Categories
+1-Make transactions there own class
+2-Categories
     -Built in
         -Savings
         -Food
@@ -23,7 +24,7 @@ To-do:
         -Leisure
         -Other
     -Custom
-2-Calculate specific totals
+3-Calculate specific totals
     -Date
         -Day
         -Month
@@ -31,14 +32,14 @@ To-do:
     -Place
     -Date & Place
 
-3-Spendings report
+4-Spendings report
     -Monthly
     -Weekly
     -Yearly
-4-Savings
+5-Savings
     -Estimate
     -Annual income
-5-Budget
+6-Budget
     -Progress
         -Weekly
         -Monthly
